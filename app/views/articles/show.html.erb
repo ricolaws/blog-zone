@@ -1,9 +1,10 @@
-<h1>Showing Article Details</h1>
-
+<h1 class="display-6 mb-4">Showing Article Details</h1>
+<div class="highlight w-50 mx-auto mb-4">
 <p><strong> Title: </strong> <%= @article.title %></p>
 <p><strong> Description: </strong> <%= @article.description %></p>
-<p>
-    <%= link_to "Edit", edit_article_path(@article) %> | 
-    <%= link_to "Delete", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> |
-    <%= link_to "Index", articles_path %>
-    </p>
+</div>
+<div class="col-lg-6 mx-auto">
+    <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary btn-sm px-4 gap-4" %>
+    <%= link_to "Delete", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-sm px-4 btn-warning" %>
+    <%= link_to "Index", articles_path, class: "btn btn-outline-secondary btn-sm px-4" %>
+</div>    

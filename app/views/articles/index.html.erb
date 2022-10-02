@@ -1,6 +1,7 @@
-<h1>Articles Listing Page</h1>
+<h1 class="display-6 mb-4">Articles Index</h1>
 
-<table>
+
+<table class="table text-start m-4">
     <thead>
         <tr>
             <th>Title</th>
@@ -22,10 +23,11 @@
     </tbody>
 </table>
 
-<p>
-    <%= link_to "Create new article", new_article_path  %> |
-    <%= link_to "Home", root_path %>
-</p>
-
+<div class="d-flex px-3 bd-highlight">
+    <div class="p-2">
+    <%= link_to "New Article", new_article_path, class: "btn btn-primary btn-sm px-4 gap-4"  %>
+    <%= link_to "Home", root_path, class: "btn btn-outline-secondary btn-sm px-4" %>
+    </div>
+</div>
 
 

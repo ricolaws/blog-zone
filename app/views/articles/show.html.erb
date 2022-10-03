@@ -1,7 +1,14 @@
 <h1 class="display-6 mb-4">Showing Article Details</h1>
-<div class="highlight w-50 mx-auto mb-4">
+
+<div class="highlight w-50 bg-light mx-auto mb-4 p-2 text-start" style="height: 300px">
 <p><strong> Title: </strong> <%= @article.title %></p>
 <p><strong> Description: </strong> <%= @article.description %></p>
+</div>
+<div class="text-muted mb-4">
+    <small>Created <%= time_ago_in_words(@article.created_at) %> ago</small>
+    <% if @article.created_at != @article.updated_at %>
+         <small>Edited <%= time_ago_in_words(@article.updated_at) %> ago</small> 
+    <% end %>
 </div>
 <div class="col-lg-6 mx-auto">
     <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary btn-sm px-4 gap-4" %>

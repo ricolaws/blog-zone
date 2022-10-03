@@ -1,7 +1,7 @@
-<h1 class="display-6 mb-4">Showing Article Details</h1>
+<h1 class="display-6 mb-2"><%= @article.title %></h1>
+<p class="text-muted">by <%= @article.user.username.titleize %></p>
 
 <div class="highlight w-50 bg-light mx-auto mb-4 p-2 text-start" style="height: 300px">
-<p><strong> Title: </strong> <%= @article.title %></p>
 <p><strong> Description: </strong> <%= @article.description %></p>
 </div>
 <div class="text-muted mb-4">

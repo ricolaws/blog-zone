@@ -1,23 +1,23 @@
 <div class="bd-example w-50 mx-auto">
 <%= render "shared/errors", obj: @user %>
-<%= form_with(model: @user, local: true, class: "text-start") do |f| %> 
-    <div> 
+<%= form_with(model: @user, local: true, class: "text-start form") do |f| %> 
+    <div class="form-group mt-2"> 
         <%= f.label :username %> <br/>
         <%= f.text_field :username, class: "form-control", placeholder: "Enter your username" %>
     </div>
 
-    <div> 
+    <div class="form-group mt-2"> 
         <%= f.label :email %> <br/>
         <%= f.email_field :email, class: "form-control", placeholder: "Enter your email address" %>
     </div>
 
-    <div> 
+    <div class="form-group mt-2"> 
         <%= f.label :password %> <br/>
         <%= f.password_field :password, class: "form-control", placeholder: "Choose a password" %>
     </div>
 
-    <div class="col-lg-6 mx-auto">
-        <%= f.submit "Sign up", class: "btn btn-primary btn-sm px-4 gap-4" %>
+    <div class="col-lg-6 mx-auto mt-4">
+        <%= f.submit(@user.new_record? ? "Sign up" : "Update Profile", class: "btn btn-primary btn-sm px-4") %>
         <%= link_to "Index", articles_path, class: "btn btn-outline-secondary btn-sm px-4" %>
     </div>
 <% end %>

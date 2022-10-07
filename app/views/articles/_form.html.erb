@@ -1,17 +1,17 @@
 <div class="bd-example w-50 mx-auto">
 <%= render "shared/errors", obj: @article %>
 <%= form_with(model: @article, local: true, class: "text-start") do |f| %> 
-    <p> 
+    <div class="form-group mt-2"> 
         <%= f.label :title %> <br/>
         <%= f.text_field :title, class: "form-control" %>
-    </p>
+    </div>
 
-    <p> 
+    <div class="form-group mt-2"> 
         <%= f.label :description %> <br/>
         <%= f.text_area :description, class: "form-control", rows: 5 %>
-    </p>
+    </div>
 
-    <div class="col-lg-6 mx-auto">
+    <div class="col-lg-6 mx-auto mt-4">
         <%= f.submit class: "btn btn-primary btn-sm px-4 gap-4" %>
         <%= link_to "Index", articles_path, class: "btn btn-outline-secondary btn-sm px-4" %>
     </div>

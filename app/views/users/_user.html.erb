@@ -1,0 +1,16 @@
+<div class="d-flex flex-column">
+    <% @users.each do |user| %>
+    <div class="highlight w-50 bg-light mx-auto mb-4 p-2 text-center" style="height: 300px">
+        <div class="text-center bg-secondary p-2">
+            <h4 class="display-6 text-light"><%= user.username.titleize %></h4>
+        </div>
+        <div class="p-2">
+            <img src="<%= user.img_url %>" alt="Picture" style="width: 100px;">
+        </div>
+        <div><%= user.articles.count %> articles</div>
+
+        <div><%= link_to "Show", user_path(user.id) %></div>
+        <div><%= link_to "Edit", edit_user_path(user.id) %></div>
+    </div>
+    <% end %>
+</div>
